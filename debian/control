@@ -1,0 +1,68 @@
+Source: gstreamer-sharp
+Section: cli-mono
+Priority: optional
+Maintainer: Debian CLI Libraries Team <pkg-cli-libs-team@lists.alioth.debian.org>
+Uploaders: Chow Loong Jin <hyperair@ubuntu.com>
+Build-Depends: autotools-dev,
+               cli-common-dev (>= 0.5.7),
+               debhelper (>= 7.0.50~),
+               gstreamer0.10-plugins-base,
+               gstreamer0.10-plugins-good,
+               libglib2.0-cil-dev (>= 2.12),
+               libglib2.0-dev (>= 2.18.1),
+               libgstreamer-plugins-base0.10-dev (>= 0.10.25),
+               libgstreamer0.10-dev (>= 0.10.25),
+               libgtk2.0-cil-dev (>= 2.12),
+               libgtk2.0-dev (>= 2.17.3),
+               mono-devel (>= 2.4.3),
+               monodoc-base (>= 1.1),
+               nunit-console
+Standards-Version: 3.9.2
+Homepage: http://gstreamer.freedesktop.org/modules/gstreamer-sharp.html
+Vcs-Git: git://git.debian.org/pkg-cli-libs/packages/gstreamer-sharp.git
+Vcs-Browser: http://git.debian.org/?p=pkg-cli-libs/packages/gstreamer-sharp.git;a=summary
+
+Package: libgstreamer0.9-cil
+Architecture: any
+Depends: libglib2.0-cil, ${cli:Depends}, ${misc:Depends}, ${shlibs:Depends}
+Description: CLI bindings to GStreamer
+ GStreamer is a streaming media framework, based on graphs of filters
+ which operate on media data.  Applications using this library can do
+ anything from real-time sound processing to playing videos, and just
+ about anything else media-related.  Its plugin-based architecture means
+ that new data types or processing capabilities can be added simply by
+ installing new plug-ins.
+ .
+ This package contains the GStreamer# assembly to access GStreamer from CLI
+ applications.
+
+Package: libgstreamer0.10-cil-dev
+Architecture: all
+Depends: libgstreamer0.9-cil (<< ${source:Upstream-Version}.1~),
+         libgstreamer0.9-cil (>= ${source:Upstream-Version}),
+         ${cli:Depends},
+         ${misc:Depends}
+Description: CLI bindings to GStreamer - development files
+ GStreamer is a streaming media framework, based on graphs of filters
+ which operate on media data.  Applications using this library can do
+ anything from real-time sound processing to playing videos, and just
+ about anything else media-related.  Its plugin-based architecture means
+ that new data types or processing capabilities can be added simply by
+ installing new plug-ins.
+ .
+ This package contains the development files required to compile CLI
+ applications and libraries which use GStreamer#.
+
+Package: monodoc-gstreamer-manual
+Architecture: all
+Section: doc
+Depends: monodoc-manual, ${misc:Depends}
+Description: CLI bindings to GStreamer - developer documentation
+ GStreamer is a streaming media framework, based on graphs of filters
+ which operate on media data.  Applications using this library can do
+ anything from real-time sound processing to playing videos, and just
+ about anything else media-related.  Its plugin-based architecture means
+ that new data types or processing capabilities can be added simply by
+ installing new plug-ins.
+ .
+ This package contains the compiled XML documentation for use with Monodoc.
