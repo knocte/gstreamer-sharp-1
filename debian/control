@@ -1,8 +1,8 @@
-Source: gstreamer-sharp
+Source: gstreamer-sharp-1.0
 Section: cli-mono
 Priority: optional
 Maintainer: Debian CLI Libraries Team <pkg-cli-libs-team@lists.alioth.debian.org>
-Uploaders: Chow Loong Jin <hyperair@ubuntu.com>
+Uploaders: Andrés G. Aragoneses <knocte@gmail.com>
 Build-Depends: autotools-dev,
                cli-common-dev (>= 0.5.7),
                debhelper (>= 7.0.50~),
@@ -19,10 +19,10 @@ Build-Depends: autotools-dev,
                nunit-console
 Standards-Version: 3.9.2
 Homepage: http://gstreamer.freedesktop.org/modules/gstreamer-sharp.html
-Vcs-Git: git://git.debian.org/pkg-cli-libs/packages/gstreamer-sharp.git
-Vcs-Browser: http://git.debian.org/?p=pkg-cli-libs/packages/gstreamer-sharp.git;a=summary
+Vcs-Git: git://git.debian.org/pkg-cli-libs/packages/gstreamer-sharp.git ?
+Vcs-Browser: http://git.debian.org/?p=pkg-cli-libs/packages/gstreamer-sharp.git;a=summary ?
 
-Package: libgstreamer0.9-cil
+Package: libgstreamer1.0-cil
 Architecture: any
 Depends: libglib2.0-cil, ${cli:Depends}, ${misc:Depends}, ${shlibs:Depends}
 Description: CLI bindings to GStreamer
@@ -36,10 +36,10 @@ Description: CLI bindings to GStreamer
  This package contains the GStreamer# assembly to access GStreamer from CLI
  applications.
 
-Package: libgstreamer0.10-cil-dev
+Package: libgstreamer1.0-cil-dev
 Architecture: all
-Depends: libgstreamer0.9-cil (<< ${source:Upstream-Version}.1~),
-         libgstreamer0.9-cil (>= ${source:Upstream-Version}),
+Depends: libgstreamer1.0-cil (<< ${source:Upstream-Version}.1~),
+         libgstreamer1.0-cil (>= ${source:Upstream-Version}),
          ${cli:Depends},
          ${misc:Depends}
 Description: CLI bindings to GStreamer - development files
