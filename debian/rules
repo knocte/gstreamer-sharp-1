@@ -18,5 +18,5 @@ override_dh_makeshlibs:
 # Disable tests to workaround ftbfs until BDO #638337 is fixed
 override_dh_auto_test:
 
-%:
-	dh $@ --with cli
+#%:
+#	dh $@ --with cli
