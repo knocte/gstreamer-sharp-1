@@ -3,8 +3,8 @@ Section: cli-mono
 Priority: optional
 Maintainer: Debian CLI Libraries Team <pkg-cli-libs-team@lists.alioth.debian.org>
 Uploaders: Andrés G. Aragoneses <knocte@gmail.com>
-#Build-Depends: autotools-dev,
-#               cli-common-dev (>= 0.5.7),
+Build-Depends: cli-common-dev (>= 0.5.7)
+#autotools-dev,
 #               debhelper (>= 7.0.50~),
 #               gstreamer0.10-plugins-base,
 #               gstreamer0.10-plugins-good,
