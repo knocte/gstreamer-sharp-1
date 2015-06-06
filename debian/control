@@ -3,20 +3,20 @@ Section: cli-mono
 Priority: optional
 Maintainer: Debian CLI Libraries Team <pkg-cli-libs-team@lists.alioth.debian.org>
 Uploaders: Andrés G. Aragoneses <knocte@gmail.com>
-Build-Depends: autotools-dev,
-               cli-common-dev (>= 0.5.7),
-               debhelper (>= 7.0.50~),
-               gstreamer0.10-plugins-base,
-               gstreamer0.10-plugins-good,
-               libglib2.0-cil-dev (>= 2.12),
-               libglib2.0-dev (>= 2.18.1),
-               libgstreamer-plugins-base0.10-dev (>= 0.10.25),
-               libgstreamer0.10-dev (>= 0.10.25),
-               libgtk2.0-cil-dev (>= 2.12),
-               libgtk2.0-dev (>= 2.17.3),
-               mono-devel (>= 2.4.3),
-               monodoc-base (>= 1.1),
-               nunit-console
+#Build-Depends: autotools-dev,
+#               cli-common-dev (>= 0.5.7),
+#               debhelper (>= 7.0.50~),
+#               gstreamer0.10-plugins-base,
+#               gstreamer0.10-plugins-good,
+#               libglib2.0-cil-dev (>= 2.12),
+#               libglib2.0-dev (>= 2.18.1),
+#               libgstreamer-plugins-base0.10-dev (>= 0.10.25),
+#               libgstreamer0.10-dev (>= 0.10.25),
+#               libgtk2.0-cil-dev (>= 2.12),
+#               libgtk2.0-dev (>= 2.17.3),
+#               mono-devel (>= 2.4.3),
+#               monodoc-base (>= 1.1),
+#               nunit-console
 Standards-Version: 3.9.2
 Homepage: http://gstreamer.freedesktop.org/modules/gstreamer-sharp.html
 Vcs-Git: git://git.debian.org/pkg-cli-libs/packages/gstreamer-sharp.git ?
