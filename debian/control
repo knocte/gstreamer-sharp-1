@@ -1,4 +1,4 @@
-Source: gstreamer-sharp-1.0
+Source: gstreamer-sharp-1
 Section: cli-mono
 Priority: optional
 Maintainer: Debian CLI Libraries Team <pkg-cli-libs-team@lists.alioth.debian.org>
