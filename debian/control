@@ -24,7 +24,8 @@ Vcs-Browser: http://git.debian.org/?p=pkg-cli-libs/packages/gstreamer-sharp.git;
 
 Package: libgstreamer1.0-cil
 Architecture: any
-Depends: libglib2.0-cil, ${cli:Depends}, ${misc:Depends}, ${shlibs:Depends}
+Depends: libglib2.0-cil, ${misc:Depends}, ${shlibs:Depends}
+#${cli:Depends}
 Description: CLI bindings to GStreamer
  GStreamer is a streaming media framework, based on graphs of filters
  which operate on media data.  Applications using this library can do
@@ -40,8 +41,8 @@ Package: libgstreamer1.0-cil-dev
 Architecture: all
 Depends: libgstreamer1.0-cil (<< ${source:Upstream-Version}.1~),
          libgstreamer1.0-cil (>= ${source:Upstream-Version}),
-         ${cli:Depends},
          ${misc:Depends}
+#${cli:Depends}
 Description: CLI bindings to GStreamer - development files
  GStreamer is a streaming media framework, based on graphs of filters
  which operate on media data.  Applications using this library can do
