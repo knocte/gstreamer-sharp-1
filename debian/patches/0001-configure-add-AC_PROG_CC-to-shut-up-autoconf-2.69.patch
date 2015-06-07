@@ -1,0 +1,35 @@
+From 96957570833aef11a325ee82b88e30cd98902506 Mon Sep 17 00:00:00 2001
+From: "Andres G. Aragoneses" <knocte@gmail.com>
+Date: Mon, 31 Mar 2014 18:09:39 +0200
+Subject: [PATCH] configure: add AC_PROG_CC to shut up autoconf 2.69
+
+The errors being shown by not using AC_PROG_CC with this
+version of autoconf (the one in debian testing):
+
+/usr/share/automake-1.14/am/depend2.am: error: am__fastdepCC does not appear in AM_CONDITIONAL
+/usr/share/automake-1.14/am/depend2.am:   The usual way to define 'am__fastdepCC' is to add 'AC_PROG_CC'
+/usr/share/automake-1.14/am/depend2.am:   to 'configure.ac' and run 'aclocal' and 'autoconf' again
+/usr/share/automake-1.14/am/depend2.am: error: AMDEP does not appear in AM_CONDITIONAL
+/usr/share/automake-1.14/am/depend2.am:   The usual way to define 'AMDEP' is to add one of the compiler tests
+/usr/share/automake-1.14/am/depend2.am:     AC_PROG_CC, AC_PROG_CXX, AC_PROG_OBJC, AC_PROG_OBJCXX,
+/usr/share/automake-1.14/am/depend2.am:     AM_PROG_AS, AM_PROG_GCJ, AM_PROG_UPC
+/usr/share/automake-1.14/am/depend2.am:   to 'configure.ac' and run 'aclocal' and 'autoconf' again
+sources/glue/Makefile.am: error: C source seen but 'CC' is undefined
+sources/glue/Makefile.am:   The usual way to define 'CC' is to add 'AC_PROG_CC'
+sources/glue/Makefile.am:   to 'configure.ac' and run 'autoconf' again.
+---
+ configure.ac | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/configure.ac b/configure.ac
+index 5a40b0c..ae45803 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -4,6 +4,7 @@ AC_CANONICAL_TARGET
+ AM_INIT_AUTOMAKE
+ AM_MAINTAINER_MODE
+ AC_PROG_INSTALL
++AC_PROG_CC
+ LT_INIT
+ 
+ dnl Package settings
