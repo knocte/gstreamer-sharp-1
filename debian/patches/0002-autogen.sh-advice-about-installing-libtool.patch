@@ -1,0 +1,34 @@
+From 4000100604fc454cd89b369ce3798e25a0f1ac5c Mon Sep 17 00:00:00 2001
+From: "Andres G. Aragoneses" <knocte@gmail.com>
+Date: Mon, 31 Mar 2014 22:16:47 +0200
+Subject: [PATCH] autogen.sh: advice about installing libtool
+
+libtool not being present in a system meant that this cryptic
+error about LT_INIT would be shown:
+
+sources/glue/Makefile.am:1: error: Libtool library used but 'LIBTOOL' is undefined
+sources/glue/Makefile.am:1:   The usual way to define 'LIBTOOL' is to add 'LT_INIT'
+sources/glue/Makefile.am:1:   to 'configure.ac' and run 'aclocal' and 'autoconf' again.
+sources/glue/Makefile.am:1:   If 'LT_INIT' is in 'configure.ac', make sure
+sources/glue/Makefile.am:1:   its definition is in aclocal's search path.
+autoreconf: automake failed with exit status: 1
+---
+ autogen.sh | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+diff --git a/autogen.sh b/autogen.sh
+index c012414..55fba17 100755
+--- a/autogen.sh
++++ b/autogen.sh
+@@ -3,6 +3,11 @@ which autoreconf > /dev/null
+ if [ $? -ne 0 ] ; then
+        echo "Please install autoconf" && exit 1;
+ fi
++which libtool > /dev/null 2>&1
++if [ $? -ne 0 ] ; then
++       echo "Please install libtool" && exit 1;
++fi
++
+ mkdir -p m4
+ autoreconf  -i --force --warnings=none -I . -I m4 && \
+ ./configure --enable-maintainer-mode $*

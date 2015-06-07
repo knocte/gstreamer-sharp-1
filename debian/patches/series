@@ -1,1 +1,2 @@
 0001-configure-add-AC_PROG_CC-to-shut-up-autoconf-2.69.patch
+0002-autogen.sh-advice-about-installing-libtool.patch
