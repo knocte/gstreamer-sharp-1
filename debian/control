@@ -54,16 +54,16 @@ Description: CLI bindings to GStreamer - development files
  This package contains the development files required to compile CLI
  applications and libraries which use GStreamer#.
 
-Package: monodoc-gstreamer-manual
-Architecture: all
-Section: doc
-Depends: monodoc-manual, ${misc:Depends}
-Description: CLI bindings to GStreamer - developer documentation
- GStreamer is a streaming media framework, based on graphs of filters
- which operate on media data.  Applications using this library can do
- anything from real-time sound processing to playing videos, and just
- about anything else media-related.  Its plugin-based architecture means
- that new data types or processing capabilities can be added simply by
- installing new plug-ins.
- .
- This package contains the compiled XML documentation for use with Monodoc.
+#Package: monodoc-gstreamer-manual
+#Architecture: all
+#Section: doc
+#Depends: monodoc-manual, ${misc:Depends}
+#Description: CLI bindings to GStreamer - developer documentation
+# GStreamer is a streaming media framework, based on graphs of filters
+# which operate on media data.  Applications using this library can do
+# anything from real-time sound processing to playing videos, and just
+# about anything else media-related.  Its plugin-based architecture means
+# that new data types or processing capabilities can be added simply by
+# installing new plug-ins.
+# .
+# This package contains the compiled XML documentation for use with Monodoc.
