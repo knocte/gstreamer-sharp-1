@@ -9,6 +9,7 @@ Build-Depends: autoconf,
                pkg-config,
                cli-common-dev (>= 0.5.7),
                libglib3.0-cil-dev (>= 2.99.2),
+               gtk-sharp3-gapi (>= 2.99.2), # (gapi-3.0.pc)
 #               autotools-dev,
 #               gstreamer0.10-plugins-base,
 #               gstreamer0.10-plugins-good,
