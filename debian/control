@@ -3,14 +3,13 @@ Section: cli-mono
 Priority: optional
 Maintainer: Debian CLI Libraries Team <pkg-cli-libs-team@lists.alioth.debian.org>
 Uploaders: Andrés G. Aragoneses <knocte@gmail.com>
+# gtk-sharp3-gapi is because gapi-3.0.pc is required (maybe it's called gi-sharp-gapi in the future..)
 Build-Depends: autoconf,
                automake,
                debhelper (>= 7.0.50~),
                pkg-config,
                cli-common-dev (>= 0.5.7),
                libglib3.0-cil-dev (>= 2.99.2),
-
-               # (gapi-3.0.pc)
                gtk-sharp3-gapi (>= 2.99.2),
 #               autotools-dev,
 #               gstreamer0.10-plugins-base,
