@@ -17,18 +17,17 @@ autoreconf: automake failed with exit status: 1
  1 file changed, 5 insertions(+)
 
 diff --git a/autogen.sh b/autogen.sh
-index c012414..55fba17 100755
+index e1e46f8..283edc8 100755
 --- a/autogen.sh
 +++ b/autogen.sh
-@@ -3,6 +3,11 @@ which autoreconf > /dev/null
- if [ $? -ne 0 ] ; then
-        echo "Please install autoconf" && exit 1;
- fi
+@@ -1,5 +1,10 @@
+ #!/bin/sh
+ 
 +which libtool > /dev/null 2>&1
 +if [ $? -ne 0 ] ; then
 +       echo "Please install libtool" && exit 1;
 +fi
 +
  mkdir -p m4
- autoreconf  -i --force --warnings=none -I . -I m4 && \
+ autoreconf  -i --force --warnings=none -I . -I m4
  ./configure --enable-maintainer-mode $*
