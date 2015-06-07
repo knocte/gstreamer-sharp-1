@@ -3,7 +3,10 @@
 
 export DH_VERBOSE=1
 
-#override_dh_auto_configure:
+# this 0.99.0 version had "make dist" broken so it has autogen.sh instead of configure
+# (TODO: delete this when we release vNEXT)
+override_dh_auto_configure:
+	./autogen.sh
 #	dh_auto_configure -- CSC=/usr/bin/mono-csc
 
 #override_dh_makeclilibs:
