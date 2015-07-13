@@ -1,0 +1,40 @@
+From b47125ea7add014fc668c8815aa953887abf0702 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Andr=C3=A9s=20G=2E=20Aragoneses?= <knocte@gmail.com>
+Date: Sun, 5 Jan 2014 19:29:16 +0100
+Subject: [PATCH] configure: check for plugins-base and others (bgo#721587)
+
+This would prevent a build failure when trying to 'make' the glue:
+
+generated.c: In function 'gst__tagssharp_gst__tags_tagdemux_get_element_offset':
+generated.c:1092:2: error: unknown type name 'GstTagDemux'
+  return (guint)G_STRUCT_OFFSET (GstTagDemux, element);
+  ^
+---
+ configure.ac | 10 +++++++++-
+ 1 file changed, 9 insertions(+), 1 deletion(-)
+
+diff --git a/configure.ac b/configure.ac
+index ec2ad2c..798b4c4 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -133,8 +133,16 @@ AC_SUBST(MDASSEMBLER)
+ AC_SUBST(MONODOCER)
+ 
+ AM_CONDITIONAL(ENABLE_MONODOC, test "x$enable_monodoc" = "xyes")
++
+ dnl Check for Gst
+-PKG_CHECK_MODULES(GST, gstreamer-1.0)
++GSTREAMER_REQUIRED_VERSION=1.0.0
++PKG_CHECK_MODULES(GST,
++		gstreamer-1.0 >= $GSTREAMER_REQUIRED_VERSION
++		gstreamer-base-1.0 >= $GSTREAMER_REQUIRED_VERSION
++		gstreamer-plugins-base-1.0 >= $GSTREAMER_REQUIRED_VERSION
++		gstreamer-tag-1.0 >= $GSTREAMER_REQUIRED_VERSION
++)
++
+ gstreamer_prefix=/usr
+ AC_SUBST(gstreamer_prefix)
+ AC_SUBST(GST_LIBS)
+-- 
+2.1.4
+
